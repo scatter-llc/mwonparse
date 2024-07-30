@@ -80,14 +80,8 @@ def parse_mwon(wikitext):
 
     return sections
 
-def main(url):
+def parse_mwon_from_url(url):
     wikitext = fetch_wikitext(url)
     parsed_data = parse_mwon(wikitext)
     json_data = json.dumps(parsed_data, indent=2)
     print(json_data)
-
-url = 'https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Occupational_Safety_and_Health/Pagesets'
-main(url)
-
-url = 'https://www.wikidata.org/wiki/Wikidata:Orb_Open_Graph/Queries'
-main(url)
