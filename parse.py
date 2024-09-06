@@ -83,5 +83,7 @@ def parse_mwon(wikitext):
 def parse_mwon_from_url(url):
     wikitext = fetch_wikitext(url)
     parsed_data = parse_mwon(wikitext)
-    json_data = json.dumps(parsed_data, indent=2)
-    print(json_data)
+    return(parsed_data)
+
+if __name__ == "__main__":
+    print(json.dumps(parse_mwon_from_url("https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Occupational_Safety_and_Health/Pagesets"), indent=2))
